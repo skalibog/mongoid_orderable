@@ -37,7 +37,7 @@ module Handlers
     end
 
     def apply_all_positions
-      orderable_keys.map {|field| apply_one_position(field, move_all[field]) }
+      orderable_keys.map {|field| apply_one_position(field, doc.send(field)) }
     end
 
     def apply_one_position(field, target_position)
